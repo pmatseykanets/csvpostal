@@ -6,7 +6,9 @@ default: build
 
 build:
 	go fmt ./...
-	go vet ./...	
+	go vet ./...
+	go mod tidy
+	
 	@mkdir -p ./release
 	@rm -rf ./release/*
 	GOOS=$(PLATFORM) GOARCH=$(ARCH) CGO_ENABLED=1 go build -o ./release/$(BINARY)-$(PLATFORM)-$(ARCH)
