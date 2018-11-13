@@ -1,0 +1,6 @@
+*.test
+*.out
+/.idea
+/debug
+/release
+/csv-postal
